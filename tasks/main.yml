@@ -1,0 +1,11 @@
+---
+- include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Development tools
+  block:
+    - name: Install packages
+      tags: packages,system,settings
+      package:
+        state: latest
+        name: "{{packages}}"
+...
